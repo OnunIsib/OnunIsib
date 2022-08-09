@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main()
+{
+    float a,b,c,d,n,x;
+    printf("Solving 2nd degree equations\n");
+    printf("Enter the corresponding numbers for (a) (b) and (c) in the equations \n");
+    scanf("%f%f%f",&a,&b,&c);
+    d=((b * b)-(4 * a * c));
+    printf("The delta value of your equation is: %.1f\n",d);
+    n=(-b+sqrt(d))/(2*a);
+    printf("The x1 value of your equation is: %.1f\n",n);
+    x=(-b-sqrt(d))/(2*a);
+    printf("The x2 value of your equation is %.1f\n",x);
+    return 0;
+}
