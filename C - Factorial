@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+//PROTOTYPE
+int Factorial(int N);
+int main(){
+    int N, count, F;
+    printf("choose the value of N (N>=0) = ");
+    scanf("%i", &N);
+    if(N<0){
+        printf("ERROR!. INCORRECT VALUE OF N\n");
+    }else{
+        printf("The Factorial numbers of [0,%i] are: ", N);
+        for(count=0;count<=N;count++){
+            F=Factorial(count);
+            printf("Factorial(%i) = %i\n", count, F);
+        }
+    }
+  return 0;
+}
+int Factorial(int N){
+    int F=1, count
+    if(N>=2){
+        for(count=2;count<= N;count++){
+            F=F*count;
+        }
+    }
+    return F;
+}
