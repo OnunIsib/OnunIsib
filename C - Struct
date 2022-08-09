@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define S 100
+#define siz 2
+struct data
+{
+    int day;
+    char month[S];
+    int year;
+};
+struct employee
+{
+    char name[S];
+    char job[S];
+    struct birthday, admission, promotion, resign;
+    int dependents;
+    float salary;
+};
+int main()
+{
+    struct employee company[S];
+    int i;
+    printf("\t=== Employee Data ===\n");
+    for(i=0;i<siz;i++){
+        printf("\nEmployee %i: \n", i+1);
+        printf("Name: ");
+        scanf("\n%[^\n]", company[i].name);
+        printf("Job: ");
+        scanf("\n%[^\n]", company[i].job);
+        printf("Birthday:\n");
+        printf("day/month/year: ");
+        scanf("%i/\n%[^\n]/%i",&company[i].birthday.day,
+                                company[i].birthday.month,
+                                &company[i].birthday.year);
+        printf("Number of Dependents ");
+        scanf("%i", &company[i].dependents);
+        printf("Salary $: ");
+        scanf("%f", &company[i].salary);
+    }
+    printf("\n\t=== REPORT A: Name and Job of Employees ===\n");
+    printf(" with more than 2 dependents (>=0): ");
+    for(i=0;i<siz;i++){
+        if(company[i].dependents >=2){
+            printf("\nEmployee: %s \n", company[i].name);
+            printf("Have %i dependents\n\n", company[i].dependents);
+        }
+    }
+    return 0;
+}
